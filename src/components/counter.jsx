@@ -8,8 +8,7 @@ class Counter extends Component {
   //   super();
   //   this.handelIncriment = this.handelIncriment.bind(this);
   // }
-  handelIncriment = () => {
-    // console.log("Increment  Clecked", this.state.count);
+  handelIncriment = id => {
     this.setState({ count: this.state.count + 1 });
   };
   render() {
@@ -17,7 +16,9 @@ class Counter extends Component {
       <div>
         <span className={this.getCounterClasses()}>{this.formatCounter()}</span>
         <button
-          onClick={this.handelIncriment}
+          onClick={() => {
+            this.handelIncriment({ id: 2 });
+          }}
           className="btn btn-secondary btn-sm"
         >
           Increment
