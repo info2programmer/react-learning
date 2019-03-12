@@ -4,10 +4,13 @@ class Counter extends Component {
   state = {
     count: 0
   };
-
-  handelIncriment() {
-    console.log("Increment  Clecked");
-  }
+  // constructor() {
+  //   super();
+  //   this.handelIncriment = this.handelIncriment.bind(this);
+  // }
+  handelIncriment = () => {
+    console.log("Increment  Clecked", this.state.count);
+  };
   render() {
     return (
       <div>
