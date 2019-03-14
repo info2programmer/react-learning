@@ -10,13 +10,19 @@ class Counters extends Component {
       { id: 4, value: 3 }
     ]
   };
+
+  // Delete Counter Methord
+  handelDelete = counterId =>{
+    let counters = this.state.counters.filter(c => c.id !== counterId);
+    this.setState({counters})
+  }
+
   render() {
     return (
       <div>
+        <button className="btn-primary btn btn-sm m-2">Reset</button>
         {this.state.counters.map(counter => (
-          <Counter key={counter.id} value={counter.value} >
-            <h4>Counter #{counter.id}</h4>
-          </Counter>
+          <Counter key={counter.id} onDelete={this.handelDelete} counter={counter}/>
         ))}
       </div>
     );
